@@ -3,7 +3,7 @@ const video = document.getElementById("video");
 // ======================
 // ⚠️ URL AI SERVER (NGROK)
 // ======================
-const API_URL = "https://mabel-unsapiential-brynn.ngrok-free.dev"; 
+const API_URL = "https://mabel-unsapiential-brynn.ngrok-free.dev";
 // 🔴 THAY BẰNG URL NGROK CỦA BẠN
 
 // ======================
