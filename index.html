@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Face Door</title>
+</head>
+<body>
+  <h2>Nhận diện khuôn mặt</h2>
+
+  <input type="file" id="image" />
+  <button onclick="send()">Nhận diện</button>
+
+  <pre id="result"></pre>
+
+  <script>
+    const API_URL = "https://mabel-unsapiential-brynn.ngrok-free.dev"; // 🔥 URL ngrok
+
+    async function send() {
+      const file = document.getElementById("image").files[0];
+      if (!file) return alert("Chọn ảnh");
+
+      const form = new FormData();
+      form.append("image", file);
+
+      const res = await fetch(API_URL + "/recognize", {
+        method: "POST",
+        body: form
+      });
+
+      const data = await res.json();
+      document.getElementById("result").innerText =
+        JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
